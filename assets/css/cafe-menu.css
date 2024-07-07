@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --ff: "Montserrat", sans-serif;
+    --ff-menu: "IBM Plex Serif", serif;
+    --fc-primary: #373A40;
+    --fc-secondary: #EEEEEE;
+    --fc-accent-primary: #686D76;
+
+    --accent-btn: #FF8F00;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    width: 60%;
+    margin: 0 auto;
+    border: 2px solid var(--fc-accent-primary);
+}
+
+h2 {
+    margin-left: 16px;
+    font-size: 30px;
+    text-transform: uppercase !important;
+}
+
+.bold {
+    font-weight: 700;
+}
+/* -------------------------- HEADING -------------------------- */
+.menu {
+    background: url('../img/chalkboard.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* -------------------------- MAIN -------------------------- */
+.cafe-con {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.menu-head {
+    font-family: var(--ff-menu);
+    color: var(--fc-primary);
+    font-weight: 900;
+}
+/* -------------------------- CAFE INTRO -------------------------- */
+.cafe-intro {
+    text-align: center;
+    color: var(--fc-primary);
+}
+
+.cafe-intro h1 {
+    font-size: 46px;
+    font-weight: 700;
+}
+
+/* -------------------------- CAFE MENU -------------------------- */
+.cafe-menu {
+    font-size: 16px;
+    color: var(--fc-accent-primary);
+}
+
+.cafe-menu h1 {
+    font-size: 46px;
+}
+
+.cafe-menu .info {
+    margin-bottom: 16px;
+}
+
+.cafe-menu > div {
+    margin-left: 16px;
+    margin-bottom: 16px;
+}
+
+.menu-content {
+    display: flex;
+    /* gap: 60px; */
+    justify-content: space-between;
+}
+
+/* -------------------------- MEDIA -------------------------- */
+@media (width <= 768px) {
+    .menu-head {
+        font-size: 30px !important;
+    }
+
+    .head2 {
+        font-size: 20px !important;
+        margin: 0;
+    }
+
+    hr {
+        width: 95%;
+    }
+
+    .cafe-menu {
+        font-size: 14px;
+    }
+
+    .cafe-menu > div {
+        margin: 0;
+    }
+}

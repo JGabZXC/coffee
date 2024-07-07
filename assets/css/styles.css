@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --ff: "Montserrat", sans-serif;
+
+    --fc-primary: #373A40;
+    --fc-secondary: #EEEEEE;
+    --fc-accent-primary: #686D76;
+
+    --accent-btn: #FF8F00;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--ff);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* -------------------------- GLOBAL -------------------------- */
+img {
+    display: block;
+    width: 100%;
+}
+
+.anchor {
+    text-decoration: none;
+    color: var(--fc-secondary);
+}
+
+.default-topo {
+    letter-spacing: .4px;
+    line-height: 1.6em;
+}
+
+.highlight {
+    color: var(--fc-primary);
+    font-weight: 500;
+}
+
+.out {
+    text-transform: capitalize;
+}
+
+/* -------------------------- HEADING -------------------------- */
+header {
+    color: var(--fc-secondary);
+}
+
+.bg-header {
+    background: url('../img/header-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-logo {
+    text-transform: uppercase;
+    font-weight: 900;
+    z-index: 5;
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    background-color: var(--fc-primary);
+    box-shadow: 0 10px 10px 0 rgb(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    right: 0;
+    z-index: 5;
+}
+
+.bars {
+    display: block;
+    height: 3px;
+    width: 25px;
+    margin-top: 5px;
+    background-color: var(--fc-secondary);
+    transition: .5s;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.nav-menu a:hover {
+    color: var(--fc-accent-primary);
+}
+
+/* -------------------------- MAIN -------------------------- */
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding-block: 60px;
+}
+
+.hero-intro {
+    color: var(--fc-accent-primary);
+}
+
+.hero-intro h1 {
+    font-size: 42px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--fc-primary);
+}
+
+.hero-intro p {
+    margin-bottom: 20px;
+}
+
+.hero-intro .img-con {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.hero-intro img {
+    aspect-ratio: 16 / 9;
+    border-radius: .5rem;
+}
+
+.caro {
+    width: 70%;
+    padding: 10px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carousel h1 {
+    text-transform: uppercase;
+    color: var(--fc-primary);
+    font-weight: 600;
+}
+
+.carousel-images {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: .5rem;
+
+}
+
+.carousel-images img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.carousel-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.carousel-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--fc-secondary);
+    opacity: 0.75;
+    transition: opacity ease .5s;
+}
+
+.carousel-nav a:hover {
+    opacity: 1;
+}
+/* -------------------------- FOOTER -------------------------- */
+footer {
+    background-color: var(--fc-primary);
+    padding: 60px;
+    text-align: center;
+    color: var(--fc-secondary);
+    width: 100%;
+}
+
+.address {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.powered {
+    color: var(--fc-accent-primary);
+    font-weight: 800;
+}
+
+/* -------------------------- MEDIA -------------------------- */
+@media (width <= 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        margin: 0 -20px;
+        opacity: 0;
+        background-color: var(--fc-primary);
+        transition: opacity .5s;
+        font-size: 30px;
+        visibility: hidden;
+    }
+
+    .hamburger.active .bars:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bars:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bars:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .container {
+        width: 100%;
+        padding-inline: 15px;
+    }
+
+    .hero-intro .img-con {
+        width: 100%;
+    }
+
+    .address {
+        flex-direction: column;
+    }
+}
